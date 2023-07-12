@@ -177,6 +177,7 @@ i{
   background-color: rgb(78, 78, 78);
   width: 75vw;
   height: 86.6vh;
+  overflow: auto;
 }
 .search{
   padding: 4px 10px;
@@ -207,3 +208,32 @@ i{
 .sea h1{
   margin-top: 40px;
 }
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+.products .content{
+  padding: 15px;
+  background-color: black;
+  border-radius: 10px;
+
+}
+.products .im{
+  width: 200px;
+  overflow: hidden;
+}
+.products img{
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+  border-radius: 10px;
+
+}
+.products  h3,p{
+  margin-top: 10px;
+}
+
+
+

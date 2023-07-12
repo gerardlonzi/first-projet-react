@@ -9,7 +9,6 @@ export default function Dashboard(){
     let location = useLocation()
     let pathname = location.pathname
     let val = pathname.split("/")[2]  
-    console.log(val)      
     
     return(
        
@@ -32,7 +31,7 @@ export default function Dashboard(){
                     <i class="material-icons">search</i>
                         <Link to="/Dashboard/search" className={ val=="search"?`nav-active `: ""}>Search</Link>
                     </div>
-                    <div className="container mm">
+                    <div className="container mm">  
                     <i class="material-icons">dashboard</i>
                         <Link to="/Dashboard/Dashboard" className={ val=="Dashboard"?`nav-active `: ""}>Dashboard</Link>
                     </div>
