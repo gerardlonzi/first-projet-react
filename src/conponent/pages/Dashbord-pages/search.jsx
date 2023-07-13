@@ -66,23 +66,59 @@ export default function Search(){
     ]
 
     
+    function genereProduct(Array){
+        return(
+        Array.map((n, index) =>
+                    
+              <div key={index} className='content'>
+                    <div className='im'>
+                        <img src={n.imgs} alt="" />
+                    </div>
+                    <h3>{n.names}</h3>
+                        <p>{n.prix}</p>
+                    </div>
+                    
+                )
+        )
+        
+    }
+   
+
+    function fil(){
+        const prod = document.querySelector('.products')
+        console.log(prod)
+        const valu = document.querySelector('.bar')
+        console.log(valu)
+
+        valu.addEventListener('input',(e)=>{
+            let val = e.target.value
+            console.log(valu.value)
+            let result = product.filter(adr => adr.names.includes(val))
+            
+            console.log(result)
+            prod.innerHTML=""
+           genereProduct(result)
+            
+        })
+    }
+    const sea = document.querySelector('.sea')
+    sea.addEventListener('scroll',(e)=>{
+        console.log(sea.scrollY)
+    })
+    
     return(
+        
         <div className='sea'>
             <div className="search">
-                <input type="text" className='bar' placeholder='Search'/><i class="material-icons">search</i>
+                <input type="text" className='bar' placeholder='Search' /><i class="material-icons">search</i>
+              
             </div>
             <h1>10 Most search Drugs</h1>
             <div className="products">
-                    {product.map((n, index) =>
-                    
-                        <div key={index} className='content'>
-                            <div className='im'>
-                                <img src={n.imgs} alt="" />
-                            </div>
-                            <h3>{n.names}</h3>
-                            <p>{n.prix}</p>
-                        </div>
-                    )}
+                    {
+                        genereProduct(product)
+                    }
+                  
             </div>
         </div>
         
@@ -90,11 +126,5 @@ export default function Search(){
     )
 } 
 
-function fil(){
-    const value = document.querySelector('.bar')
-    value.addEventListener('input',(e)=>{
-        let val = e.target.value
-        product.filter(adr => adr.names.includes(val))
-})
-}
+
 
